@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🍃 Plant Disease Detection – SMART AGRI AI</title>
+  <meta name="description" content="Classify plant leaf pathology using Deep Convolutional Neural Networks (CNN) for rapid disease diagnosis and remedy guidance.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20viewBox=%220%200%20100%20100%22><text y=%22.9em%22 font-size=%2290%22>🍃</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-badge">🌱</div>
+        <div class="brand-text">
+          <span class="brand-title">SMART AGRI AI</span>
+          <span class="brand-tagline">AI Decision Support System</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">☰</button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="crop.html" class="nav-link">Crop Recommendation</a></li>
+        <li><a href="disease.html" class="nav-link active">Disease Detection</a></li>
+        <li><a href="fertilizer.html" class="nav-link">Fertilizer</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container page-header-content">
+      <div class="section-pill">Deep Learning Vision</div>
+      <h1 class="page-title">🍃 Plant Disease Detection</h1>
+      <p class="page-desc">
+        Upload a high-resolution photo of a suspected diseased leaf. Our Deep Convolutional Neural Network (CNN) architecture inspects lesion patterns, discoloration, and tissue degradation.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="section">
+    <div class="container" style="max-width: 860px;">
+
+      <!-- Alert / Status Container -->
+      <div id="diseaseAlertContainer"></div>
+
+      <!-- Upload Container Card -->
+      <div class="app-card">
+        <input type="file" id="leafFileInput" accept=".jpg,.jpeg,.png,image/jpeg,image/png" style="display: none;">
+
+        <!-- Modern Dropzone -->
+        <div class="upload-dropzone" id="dropzone">
+          <div class="upload-icon">📸</div>
+          <h3 class="upload-text-main">Click or Drag & Drop Leaf Image</h3>
+          <p class="upload-text-sub">Supported formats: JPG, JPEG, PNG (Max size: 16 MB)</p>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('leafFileInput').click()">
+            Browse Files
+          </button>
+        </div>
+
+        <!-- Image Preview Box -->
+        <div class="preview-container" id="previewBox">
+          <img id="previewImg" class="preview-img-box" src="" alt="Leaf Preview">
+          <div class="preview-details">
+            <h4 class="preview-filename" id="previewName">leaf_sample.jpg</h4>
+            <div class="preview-meta" id="previewMeta">Dimensions: 0 x 0 px | Size: 0 KB</div>
+            <button type="button" class="btn btn-secondary btn-sm" id="removeFileBtn" style="color: #ef4444;">
+              ✕ Remove & Re-upload
+            </button>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="analyzeBtn" disabled>
+          🔬 Analyze Leaf
+        </button>
+      </div>
+
+      <!-- Result Card -->
+      <section class="result-section" id="diseaseResultSection">
+        <div class="result-card">
+          <div class="result-card-header">
+            <div class="result-primary-info">
+              <div class="result-crop-icon">🔬</div>
+              <div class="result-heading-group">
+                <span class="result-eyebrow">CNN Pathology Diagnosis</span>
+                <h2 class="result-title" id="resDiseaseName">Tomato - Early Blight</h2>
+                <span class="result-scientific-name">Deep Neural Network Visual Classification</span>
+              </div>
+            </div>
+
+            <div class="result-confidence-badge">
+              <div class="confidence-score" id="resDiseaseConfidence">96.4%</div>
+              <div class="confidence-label">Confidence Score</div>
+            </div>
+          </div>
+
+          <div class="result-body">
+            <div class="advisory-box">
+              <div class="advisory-title">
+                <span>🛡️</span>
+                <span>Pathology Management & Treatment Advisory:</span>
+              </div>
+              <p class="advisory-text" id="resDiseaseTreatment">
+                Isolate affected foliage to inhibit spore propagation. Apply copper-based fungicides or bio-fungicides during dry weather. Practice drip irrigation to prevent surface leaf moisture.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture & Dataset Placement Info -->
+      <div class="app-card" style="margin-top: 2rem; background: var(--bg-card-subtle);">
+        <h4 style="font-family: var(--font-heading); font-weight: 700; color: var(--primary-900); margin-bottom: 0.5rem;">
+          📁 CNN Deep Learning Architecture Specification
+        </h4>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+          This module is designed for 224x224 RGB image tensors processed through convolutional feature extractors (Conv2D, MaxPooling2D, Dropout, Dense Softmax) using TensorFlow/Keras.
+          When real plant disease image datasets (such as PlantVillage) are placed in <code>data/disease_dataset/</code>, executing <code>python backend/training/train_disease_model.py</code> automatically trains and deploys the weights to <code>backend/models/disease_model.h5</code>.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      © 2026 Smart Agri AI | AI-Based Smart Agriculture Decision Support System
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/disease.js"></script>
+</body>
+</html>

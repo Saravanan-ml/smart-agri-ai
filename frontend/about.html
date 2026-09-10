@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – SMART AGRI AI Decision Support System</title>
+  <meta name="description" content="Academic context, architecture, ML/DL methodology, and future research directions for the Smart Agri AI platform.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20viewBox=%220%200%20100%20100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-badge">🌱</div>
+        <div class="brand-text">
+          <span class="brand-title">SMART AGRI AI</span>
+          <span class="brand-tagline">AI Decision Support System</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">☰</button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="crop.html" class="nav-link">Crop Recommendation</a></li>
+        <li><a href="disease.html" class="nav-link">Disease Detection</a></li>
+        <li><a href="fertilizer.html" class="nav-link">Fertilizer</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container page-header-content">
+      <div class="section-pill">Academic Project Dossier</div>
+      <h1 class="page-title">About SMART AGRI AI</h1>
+      <p class="page-desc">
+        Bridging the gap between agricultural research literature and real-world farm decision support using Machine Learning, Deep Learning, and RESTful architectures.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="section">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Left Column: Core Dossier -->
+        <div>
+          <!-- Paper Background -->
+          <div class="about-card">
+            <h2 class="about-title"><span>📄</span> Academic Inspiration & Base Paper</h2>
+            <p class="about-text">
+              This system is inspired by published research on the application of <strong>Artificial Intelligence, Machine Learning (ML), and Deep Learning (DL) in Precision Agriculture</strong>. While foundational research demonstrates high theoretical model accuracies in controlled experiments, practicing farmers often lack intuitive interfaces to query these models.
+            </p>
+            <div class="paper-cite-box">
+              <strong>Base Topic:</strong> "Applications of Machine Learning and Deep Learning Algorithms in Smart Agriculture Decision Support Systems"<br>
+              <strong>Objective:</strong> Translate theoretical agronomic models into an accessible, responsive, full-stack decision-support system.
+            </div>
+            <p class="about-text">
+              <strong>SMART AGRI AI</strong> addresses this challenge by wrapping rigorous mathematical classifiers into a responsive web application powered by a Python Flask REST API.
+            </p>
+          </div>
+
+          <!-- Problem Statement -->
+          <div class="about-card" id="problem">
+            <h2 class="about-title"><span>⚠️</span> Problem Statement</h2>
+            <p class="about-text">
+              Modern agriculture faces complex challenges that threaten global food security:
+            </p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.25rem; color: var(--text-secondary); line-height: 1.7;">
+              <li><strong>Suboptimal Crop Selection:</strong> Farmers often plant traditional crops based on habit rather than soil chemical compatibility, leading to reduced yield and financial vulnerability.</li>
+              <li><strong>Imbalanced Fertilizer Usage:</strong> Indiscriminate application of nitrogenous fertilizers causes soil acidification, groundwater eutrophication, and escalating production costs.</li>
+              <li><strong>Delayed Disease Diagnosis:</strong> Plant pathologies caught late cause catastrophic crop loss before corrective treatments can be applied.</li>
+              <li><strong>Lack of Real-Time Decision Support:</strong> Agricultural extension services are often geographically constrained and unable to deliver timely individualized guidance.</li>
+            </ul>
+          </div>
+
+          <!-- Proposed Solution -->
+          <div class="about-card">
+            <h2 class="about-title"><span>💡</span> Proposed Solution</h2>
+            <p class="about-text">
+              SMART AGRI AI establishes a modular, three-tiered decision support system:
+            </p>
+            <div class="tech-spec-grid">
+              <div class="tech-spec-item">
+                <div class="tech-spec-title">1. Soil & Crop Compatibility</div>
+                <div class="tech-spec-desc">Predicts top-performing crops across 22 cultivars with 99.55% empirical accuracy using Random Forest and multi-class probability scoring.</div>
+              </div>
+              <div class="tech-spec-item">
+                <div class="tech-spec-title">2. Soil Chemistry Balancing</div>
+                <div class="tech-spec-desc">Formulates targeted fertilizer recommendations matching crop uptake需求 with soil macronutrient (NPK) measurements.</div>
+              </div>
+              <div class="tech-spec-item">
+                <div class="tech-spec-title">3. Visual Leaf Pathology</div>
+                <div class="tech-spec-desc">CNN visual recognition pipeline architected to classify leaf lesions directly from standard smartphone photographs.</div>
+              </div>
+              <div class="tech-spec-item">
+                <div class="tech-spec-title">4. Live Model Auditing</div>
+                <div class="tech-spec-desc">Transparent dashboard with zero fabricated numbers, displaying true Gini feature importances and SQLite advisory query records.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ML & DL Methodology -->
+          <div class="about-card">
+            <h2 class="about-title"><span>🧠</span> ML & Deep Learning Methodology</h2>
+            <h4 style="font-family: var(--font-heading); color: var(--primary-900); margin: 1rem 0 0.5rem;">Random Forest (Ensemble Learning)</h4>
+            <p class="about-text">
+              Random Forest constructs an ensemble of 150 de-correlated decision trees trained via bootstrap aggregation (bagging). At each node split, a random subset of agronomic features is evaluated using the Gini Impurity criterion:
+            </p>
+            <div class="paper-cite-box">
+              Gini = 1 - &sum; (p<sub>i</sub>)<sup>2</sup> &nbsp;|&nbsp; Aggregation: y = mode{Tree<sub>1</sub>(x), Tree<sub>2</sub>(x), ..., Tree<sub>N</sub>(x)}
+            </div>
+            <p class="about-text">
+              This mitigates individual tree overfitting and models non-linear interactions between rainfall, relative humidity, and soil chemistry.
+            </p>
+
+            <h4 style="font-family: var(--font-heading); color: var(--primary-900); margin: 1.5rem 0 0.5rem;">Convolutional Neural Networks (Deep Vision)</h4>
+            <p class="about-text">
+              The plant disease engine utilizes stacked Conv2D layers with Rectified Linear Unit (ReLU) activations to learn hierarchical spatial abstractions: from basic edge gradients to complex necrotized fungal lesion shapes.
+            </p>
+          </div>
+
+          <!-- Future Scope -->
+          <div class="about-card" id="future">
+            <h2 class="about-title"><span>🚀</span> Future Scope & Roadmap</h2>
+            <p class="about-text">
+              Directions for expanding the research platform include:
+            </p>
+            <ul style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.7;">
+              <li><strong>IoT Sensor Telemetry:</strong> Connecting LoRaWAN-enabled field probes for real-time soil moisture and NPK data ingestion without manual form entry.</li>
+              <li><strong>Drone Multispectral Imagery:</strong> Scaling leaf pathology to aerial NDVI drone cameras for automated farm-wide blight mapping.</li>
+              <li><strong>Satellite Weather Integration:</strong> Real-time integration with IMD/NOAA satellite feeds for dynamic rainfall and monsoon onset forecasts.</li>
+              <li><strong>Multilingual Voice Advisory:</strong> Speech-to-text and vernacular Indian language support (Tamil, Hindi, Telugu) for direct farmer voice interaction.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Column: Project Implementation Status Matrix -->
+        <div>
+          <div class="about-card" style="position: sticky; top: 100px;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--primary-950); margin-bottom: 1.25rem;">
+              📌 Implementation Status Matrix
+            </h3>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <!-- Item 1 -->
+              <div style="border-bottom: 1px solid var(--border-light); padding-bottom: 0.85rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                  <span style="font-weight: 700; font-size: 0.92rem;">Crop Recommendation</span>
+                  <span class="service-badge badge-ready">100% Complete</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">
+                  Random Forest, 99.55% accuracy, 22 crops, live REST API.
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div style="border-bottom: 1px solid var(--border-light); padding-bottom: 0.85rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                  <span style="font-weight: 700; font-size: 0.92rem;">Fertilizer Recommender</span>
+                  <span class="service-badge badge-ready">100% Complete</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">
+                  Scikit-learn pipeline, 76.50% test accuracy, live REST API.
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div style="border-bottom: 1px solid var(--border-light); padding-bottom: 0.85rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                  <span style="font-weight: 700; font-size: 0.92rem;">Plant Disease Detection</span>
+                  <span class="service-badge badge-pending">Ready for Dataset</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">
+                  Complete frontend upload UI + backend CNN training pipeline.
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div style="border-bottom: 1px solid var(--border-light); padding-bottom: 0.85rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                  <span style="font-weight: 700; font-size: 0.92rem;">Analytics Dashboard</span>
+                  <span class="service-badge badge-ready">100% Complete</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">
+                  Chart.js visualizations, true metrics, SQLite audit trail.
+                </div>
+              </div>
+
+              <!-- Item 5 -->
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                  <span style="font-weight: 700; font-size: 0.92rem;">Database Logging</span>
+                  <span class="service-badge badge-ready">Active</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">
+                  SQLite persistent logging on every advisory query.
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-light); text-align: center;">
+              <a href="crop.html" class="btn btn-primary btn-sm btn-block">Test Live System →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      © 2026 Smart Agri AI | AI-Based Smart Agriculture Decision Support System
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

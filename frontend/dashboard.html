@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📊 Smart Agriculture Dashboard – SMART AGRI AI</title>
+  <meta name="description" content="AI model performance analytics, real-time training metrics, feature importance rankings, and query audit history.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20viewBox=%220%200%20100%20100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-badge">🌱</div>
+        <div class="brand-text">
+          <span class="brand-title">SMART AGRI AI</span>
+          <span class="brand-tagline">AI Decision Support System</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">☰</button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="crop.html" class="nav-link">Crop Recommendation</a></li>
+        <li><a href="disease.html" class="nav-link">Disease Detection</a></li>
+        <li><a href="fertilizer.html" class="nav-link">Fertilizer</a></li>
+        <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container page-header-content">
+      <div class="section-pill">Agri-Analytics</div>
+      <h1 class="page-title">📊 Smart Agriculture Dashboard</h1>
+      <p class="page-desc">
+        Real-time model health metrics, empirical test accuracy, feature importance breakdown, and persistent SQLite advisory query log.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="section">
+    <div class="container">
+
+      <!-- Status & Performance Cards -->
+      <div class="metrics-overview-grid">
+        <!-- Crop Model Status -->
+        <div class="model-status-card" id="cardModelCrop">
+          <div class="model-status-header">
+            <div>
+              <div class="model-name">🌾 Crop Recommendation</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Random Forest Classifier</div>
+            </div>
+            <span class="status-pill status-ready" id="cropStatusBadge">Checking...</span>
+          </div>
+          <div class="model-metric-grid">
+            <div class="model-metric-item">
+              <span class="model-metric-val" id="cropAcc">--</span>
+              <span class="model-metric-name">Test Accuracy</span>
+            </div>
+            <div class="model-metric-item">
+              <span class="model-metric-val" id="cropPrec">--</span>
+              <span class="model-metric-name">Precision</span>
+            </div>
+            <div class="model-metric-item">
+              <span class="model-metric-val" id="cropRec">--</span>
+              <span class="model-metric-name">Recall</span>
+            </div>
+            <div class="model-metric-item">
+              <span class="model-metric-val" id="cropF1">--</span>
+              <span class="model-metric-name">F1-Score</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fertilizer Model Status -->
+        <div class="model-status-card" id="cardModelFert">
+          <div class="model-status-header">
+            <div>
+              <div class="model-name">🧪 Fertilizer Recommender</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Random Forest Pipeline</div>
+            </div>
+            <span class="status-pill status-ready" id="fertStatusBadge">Checking...</span>
+          </div>
+          <div class="model-metric-grid">
+            <div class="model-metric-item">
+              <span class="model-metric-val" id="fertAcc">--</span>
+              <span class="model-metric-name">Test Accuracy</span>
+            </div>
+            <div class="model-metric-item">
+              <span class="model-metric-val" id="fertPrec">--</span>
+              <span class="model-metric-name">Precision</span>
+            </div>
+            <div class="model-metric-item">
+              <span class="model-metric-val" id="fertRec">--</span>
+              <span class="model-metric-name">Recall</span>
+            </div>
+            <div class="model-metric-item">
+              <span class="model-metric-val" id="fertF1">--</span>
+              <span class="model-metric-name">F1-Score</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Disease Model Status -->
+        <div class="model-status-card" id="cardModelDisease">
+          <div class="model-status-header">
+            <div>
+              <div class="model-name">🍃 Disease Detection</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">TensorFlow CNN Vision</div>
+            </div>
+            <span class="status-pill status-untrained" id="diseaseStatusBadge">Not Trained</span>
+          </div>
+          <div class="model-metric-grid">
+            <div class="model-metric-item">
+              <span class="model-metric-val" id="diseaseAcc">N/A</span>
+              <span class="model-metric-name">Validation Acc</span>
+            </div>
+            <div class="model-metric-item">
+              <span class="model-metric-val" id="diseaseLoss">Not Trained</span>
+              <span class="model-metric-name">CNN Weights</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="chart-grid">
+        <!-- Chart 1: Accuracy Comparison -->
+        <div class="chart-card">
+          <h3 class="chart-title">
+            <span>📈 Model Accuracy Comparison</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: normal;">Empirical test set scores</span>
+          </h3>
+          <div class="chart-canvas-wrapper">
+            <canvas id="accuracyChartCanvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Feature Importance -->
+        <div class="chart-card">
+          <h3 class="chart-title">
+            <span>🌱 Soil & Climate Feature Importance</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: normal;">Gini impurity impact (%)</span>
+          </h3>
+          <div class="chart-canvas-wrapper">
+            <canvas id="featureChartCanvas"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Advisory History Log Table (SQLite) -->
+      <div class="table-card">
+        <div class="table-header-box">
+          <h3 class="table-title">🗄️ Recent AI Advisory Query Log (SQLite)</h3>
+          <span style="font-size: 0.82rem; color: var(--text-muted);">Live persistent audit records</span>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Module</th>
+                <th>Input Vector Summary</th>
+                <th>AI Prediction</th>
+                <th>Confidence</th>
+              </tr>
+            </thead>
+            <tbody id="historyTableBody">
+              <tr>
+                <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                  Loading advisory queries...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      © 2026 Smart Agri AI | AI-Based Smart Agriculture Decision Support System
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

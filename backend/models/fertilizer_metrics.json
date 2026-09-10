@@ -1,0 +1,38 @@
+{
+  "status": "ready",
+  "model_name": "Random Forest Fertilizer Recommender",
+  "algorithm": "Preprocessed Random Forest Pipeline",
+  "trained_at": "2026-09-10 21:12:56",
+  "total_samples": 10000,
+  "train_samples": 8000,
+  "test_samples": 2000,
+  "num_classes": 7,
+  "classes": [
+    "Compost",
+    "DAP",
+    "MOP",
+    "NPK",
+    "SSP",
+    "Urea",
+    "Zinc Sulphate"
+  ],
+  "accuracy": 76.5,
+  "precision": 78.46,
+  "recall": 76.5,
+  "f1_score": 77.22,
+  "supported_crops": [
+    "Cotton",
+    "Maize",
+    "Potato",
+    "Rice",
+    "Sugarcane",
+    "Tomato",
+    "Wheat"
+  ],
+  "supported_soils": [
+    "Clay",
+    "Loamy",
+    "Sandy",
+    "Silt"
+  ]
+}

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMART AGRI AI – AI-Based Smart Agriculture Decision Support System</title>
+  <meta name="description" content="AI-Based Smart Agriculture Decision Support System leveraging Machine Learning and Deep Learning for Crop Recommendation, Disease Detection, and Fertilizer Advisory.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20viewBox=%220%200%20100%20100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <div class="brand-badge">🌱</div>
+        <div class="brand-text">
+          <span class="brand-title">SMART AGRI AI</span>
+          <span class="brand-tagline">AI Decision Support System</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">☰</button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="crop.html" class="nav-link">Crop Recommendation</a></li>
+        <li><a href="disease.html" class="nav-link">Disease Detection</a></li>
+        <li><a href="fertilizer.html" class="nav-link">Fertilizer</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="crop.html" class="nav-link nav-btn-highlight">🌾 Try AI</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span>✨ Precision Agronomy Platform</span>
+        </div>
+        <h1 class="hero-title">
+          SMART AGRICULTURE <br>
+          <span class="highlight-text">POWERED BY ARTIFICIAL INTELLIGENCE</span>
+        </h1>
+        <p class="hero-subtitle">
+          Make smarter farming decisions using Machine Learning and Deep Learning. Analyze soil chemistry, predict optimal yields, and diagnose crop health in real-time.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#services" class="btn btn-primary btn-lg" id="heroGetStartedBtn">Get Started ↓</a>
+          <a href="crop.html" class="btn btn-secondary btn-lg" id="heroExploreBtn">Explore AI Services →</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <span class="hero-stat-num">99.5%</span>
+            <span class="hero-stat-label">Crop Model Accuracy</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-num">22+</span>
+            <span class="hero-stat-label">Supported Crops</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-num">3-in-1</span>
+            <span class="hero-stat-label">Decision Modules</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card Stack -->
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <div class="hero-illustration-header">
+            <div style="font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem;">
+              🌱 Agro-Intelligence Node
+            </div>
+            <div class="hero-system-status">
+              <div class="pulse-dot"></div>
+              <span>ML Engine Active</span>
+            </div>
+          </div>
+
+          <div class="hero-preview-box">
+            <div class="hero-preview-row">
+              <span style="color: #a7f3d0;">Soil & Climate Vector</span>
+              <span class="hero-badge-tag">NPK + Climate</span>
+            </div>
+            <div class="hero-preview-row">
+              <span style="color: #e2ede6;">Nitrogen (N) : 90 kg/ha</span>
+              <span style="color: #6ee7b7; font-weight: 700;">Rainfall: 202 mm</span>
+            </div>
+            <div class="hero-preview-row">
+              <span style="color: #e2ede6;">Temperature : 20.9 °C</span>
+              <span style="color: #6ee7b7; font-weight: 700;">Soil pH: 6.5</span>
+            </div>
+          </div>
+
+          <div class="hero-preview-box" style="background: rgba(16, 185, 129, 0.2); border-color: rgba(52, 211, 153, 0.4);">
+            <div class="hero-preview-row">
+              <span style="font-weight: 700;">Predicted Crop:</span>
+              <span style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: #6ee7b7;">🌾 RICE</span>
+            </div>
+            <div class="hero-preview-row">
+              <span>Confidence Level:</span>
+              <span style="font-weight: 700; color: #a7f3d0;">99.55% Certainty</span>
+            </div>
+          </div>
+
+          <div class="hero-floating-card">
+            <div class="card-icon">⚡</div>
+            <div>
+              <div style="font-weight: 700; font-size: 0.9rem; color: var(--primary-900);">Instant REST Inference</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">&lt; 50ms Response Latency</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-pill">Core Intelligence</div>
+        <h2 class="section-title">OUR AI-POWERED SERVICES</h2>
+        <p class="section-subtitle">
+          Comprehensive agricultural decision support modules designed to maximize productivity and minimize risk.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1: Crop Recommendation -->
+        <div class="service-card" id="cardCrop">
+          <div class="service-icon-box">🌾</div>
+          <h3 class="service-card-title">Crop Recommendation</h3>
+          <p class="service-card-desc">
+            Predict the most suitable crop based on soil NPK nutrients and environmental parameters (temperature, humidity, pH, and rainfall) using Random Forest.
+          </p>
+          <div class="service-card-meta">
+            <span class="service-badge badge-ready">Trained & Ready</span>
+            <a href="crop.html" class="service-card-link">Launch Module →</a>
+          </div>
+        </div>
+
+        <!-- Service 2: Plant Disease Detection -->
+        <div class="service-card" id="cardDisease">
+          <div class="service-icon-box">🍃</div>
+          <h3 class="service-card-title">Plant Disease Detection</h3>
+          <p class="service-card-desc">
+            Upload a leaf image and classify potential plant pathology using Deep Convolutional Neural Networks (CNN) for early diagnosis and treatment guidance.
+          </p>
+          <div class="service-card-meta">
+            <span class="service-badge badge-ready">Architecture Ready</span>
+            <a href="disease.html" class="service-card-link">Upload Leaf →</a>
+          </div>
+        </div>
+
+        <!-- Service 3: Fertilizer Recommendation -->
+        <div class="service-card" id="cardFertilizer">
+          <div class="service-icon-box">🧪</div>
+          <h3 class="service-card-title">Fertilizer Recommendation</h3>
+          <p class="service-card-desc">
+            Recommend the ideal fertilizer composition (Urea, DAP, MOP, etc.) tailored specifically to crop type, soil taxonomy, and soil nutrient deficits.
+          </p>
+          <div class="service-card-meta">
+            <span class="service-badge badge-ready">Trained & Ready</span>
+            <a href="fertilizer.html" class="service-card-link">Get Fertilizer →</a>
+          </div>
+        </div>
+
+        <!-- Service 4: Agriculture Dashboard -->
+        <div class="service-card" id="cardDashboard">
+          <div class="service-icon-box">📊</div>
+          <h3 class="service-card-title">Agriculture Dashboard</h3>
+          <p class="service-card-desc">
+            Monitor real-time model evaluation metrics (Accuracy, F1-score, Feature Importances) and inspect persistent SQLite advisory audit trails.
+          </p>
+          <div class="service-card-meta">
+            <span class="service-badge badge-ready">Live Analytics</span>
+            <a href="dashboard.html" class="service-card-link">View Dashboard →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-pill">Decision Pipeline</div>
+        <h2 class="section-title">HOW IT WORKS</h2>
+        <p class="section-subtitle">
+          From field soil telemetry to intelligent farmer advisory in five streamlined stages.
+        </p>
+      </div>
+
+      <div class="pipeline-container">
+        <!-- Step 1 -->
+        <div class="pipeline-step">
+          <div class="pipeline-number">1</div>
+          <div class="pipeline-icon">🧪</div>
+          <h4 class="pipeline-title">Agricultural Data</h4>
+          <p class="pipeline-desc">Soil NPK, pH, moisture, climate sensors, or leaf photo input.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="pipeline-step">
+          <div class="pipeline-number">2</div>
+          <div class="pipeline-icon">⚙️</div>
+          <h4 class="pipeline-title">Data Preprocessing</h4>
+          <p class="pipeline-desc">Validation, physiological bounding, scaling, and feature alignment.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="pipeline-step">
+          <div class="pipeline-number">3</div>
+          <div class="pipeline-icon">🧠</div>
+          <h4 class="pipeline-title">AI/ML Model</h4>
+          <p class="pipeline-desc">Inference via Random Forest Classifier or Deep Convolutional Neural Net.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="pipeline-step">
+          <div class="pipeline-number">4</div>
+          <div class="pipeline-icon">🎯</div>
+          <h4 class="pipeline-title">Prediction</h4>
+          <p class="pipeline-desc">Multi-class probability ranking and confidence scoring.</p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="pipeline-step">
+          <div class="pipeline-number">5</div>
+          <div class="pipeline-icon">🌾</div>
+          <h4 class="pipeline-title">Farmer Advisory</h4>
+          <p class="pipeline-desc">Actionable agronomic counsel, optimal dosages, and seasonal guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand-title">🌱 SMART AGRI AI</div>
+        <p class="footer-brand-desc">
+          AI-Based Smart Agriculture Decision Support System. Developed as an academic final-year project converting state-of-the-art agricultural machine learning into practical farmer tools.
+        </p>
+      </div>
+      <div>
+        <div class="footer-col-title">AI Services</div>
+        <ul class="footer-links">
+          <li><a href="crop.html" class="footer-link">Crop Recommendation</a></li>
+          <li><a href="disease.html" class="footer-link">Plant Disease Detection</a></li>
+          <li><a href="fertilizer.html" class="footer-link">Fertilizer Advisory</a></li>
+          <li><a href="dashboard.html" class="footer-link">Analytics Dashboard</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Technology Stack</div>
+        <ul class="footer-links">
+          <li><span class="footer-link">Python 3.12 & Flask</span></li>
+          <li><span class="footer-link">Scikit-Learn (Random Forest)</span></li>
+          <li><span class="footer-link">TensorFlow & Keras CNN</span></li>
+          <li><span class="footer-link">HTML5, CSS3, Vanilla JS</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Academic Details</div>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">Project Abstract</a></li>
+          <li><a href="about.html#problem" class="footer-link">Problem Statement</a></li>
+          <li><a href="about.html#future" class="footer-link">Future Research Scope</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      © 2026 Smart Agri AI | AI-Based Smart Agriculture Decision Support System
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

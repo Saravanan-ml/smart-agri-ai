@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧪 Fertilizer Recommendation – SMART AGRI AI</title>
+  <meta name="description" content="Calculate balanced fertilizer formulation based on crop nutrient requirements and existing soil chemical deficits.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20viewBox=%220%200%20100%20100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-badge">🌱</div>
+        <div class="brand-text">
+          <span class="brand-title">SMART AGRI AI</span>
+          <span class="brand-tagline">AI Decision Support System</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">☰</button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="crop.html" class="nav-link">Crop Recommendation</a></li>
+        <li><a href="disease.html" class="nav-link">Disease Detection</a></li>
+        <li><a href="fertilizer.html" class="nav-link active">Fertilizer</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container page-header-content">
+      <div class="section-pill">Soil Nutrient Balancing</div>
+      <h1 class="page-title">🧪 Fertilizer Recommendation</h1>
+      <p class="page-desc">
+        Calculate precise fertilizer grades (e.g. Urea, DAP, MOP, Complex NPK) based on crop uptake demand, soil classification, and existing macronutrient levels.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="section">
+    <div class="container" style="max-width: 860px;">
+
+      <!-- Quick Presets -->
+      <div class="preset-container">
+        <span class="preset-label">⚡ Sample Presets (Click to Test):</span>
+        <button type="button" class="preset-chip" data-preset="cotton_clay">Cotton on Clay Soil</button>
+        <button type="button" class="preset-chip" data-preset="maize_silt">Maize on Silt Soil</button>
+        <button type="button" class="preset-chip" data-preset="wheat_sandy">Wheat on Sandy Soil</button>
+      </div>
+
+      <!-- Alert Container -->
+      <div id="fertAlertContainer"></div>
+
+      <!-- Form Card -->
+      <div class="app-card">
+        <form id="fertilizerForm">
+          <div class="form-grid-2">
+            <!-- Crop Type -->
+            <div class="form-group">
+              <label for="cropType" class="form-label">
+                <span>Crop Cultivated</span>
+                <span class="form-label-hint">Required</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon">🌾</span>
+                <select id="cropType" class="form-control" required>
+                  <option value="" disabled selected>Select crop...</option>
+                  <option value="Cotton">Cotton</option>
+                  <option value="Maize">Maize</option>
+                  <option value="Wheat">Wheat</option>
+                  <option value="Rice">Rice</option>
+                  <option value="Tomato">Tomato</option>
+                  <option value="Potato">Potato</option>
+                  <option value="Sugarcane">Sugarcane</option>
+                  <option value="Barley">Barley</option>
+                  <option value="Pulses">Pulses</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Soil Type -->
+            <div class="form-group">
+              <label for="soilType" class="form-label">
+                <span>Soil Taxonomy</span>
+                <span class="form-label-hint">Required</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon">🌍</span>
+                <select id="soilType" class="form-control" required>
+                  <option value="" disabled selected>Select soil type...</option>
+                  <option value="Clay">Clay Soil</option>
+                  <option value="Silt">Silt Soil</option>
+                  <option value="Sandy">Sandy Soil</option>
+                  <option value="Loamy">Loamy Soil</option>
+                  <option value="Red">Red Soil</option>
+                  <option value="Black">Black Soil</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid-3" style="margin-top: 0.5rem;">
+            <!-- Nitrogen -->
+            <div class="form-group">
+              <label for="fertNitrogen" class="form-label">
+                <span>Nitrogen (N)</span>
+                <span class="form-label-hint">ppm / kg/ha</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon">🌱</span>
+                <input type="number" step="any" min="0" max="300" id="fertNitrogen" class="form-control" placeholder="e.g. 61" required>
+              </div>
+            </div>
+
+            <!-- Phosphorus -->
+            <div class="form-group">
+              <label for="fertPhosphorus" class="form-label">
+                <span>Phosphorus (P)</span>
+                <span class="form-label-hint">ppm / kg/ha</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon">🧪</span>
+                <input type="number" step="any" min="0" max="300" id="fertPhosphorus" class="form-control" placeholder="e.g. 44" required>
+              </div>
+            </div>
+
+            <!-- Potassium -->
+            <div class="form-group">
+              <label for="fertPotassium" class="form-label">
+                <span>Potassium (K)</span>
+                <span class="form-label-hint">ppm / kg/ha</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon">💎</span>
+                <input type="number" step="any" min="0" max="300" id="fertPotassium" class="form-control" placeholder="e.g. 84" required>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block" id="recommendFertBtn" style="margin-top: 1rem;">
+            🧪 Recommend Fertilizer
+          </button>
+        </form>
+      </div>
+
+      <!-- Result Card -->
+      <section class="result-section" id="fertResultSection">
+        <div class="result-card">
+          <div class="result-card-header">
+            <div class="result-primary-info">
+              <div class="result-crop-icon">🧪</div>
+              <div class="result-heading-group">
+                <span class="result-eyebrow">Optimal Fertilizer Formula</span>
+                <h2 class="result-title" id="resFertilizerName">UREA</h2>
+                <span class="result-scientific-name">Nutrient Balancing Pipeline Recommendation</span>
+              </div>
+            </div>
+
+            <div class="result-confidence-badge">
+              <div class="confidence-score" id="resFertConfidence">91.5%</div>
+              <div class="confidence-label">Suitability Match</div>
+            </div>
+          </div>
+
+          <div class="result-body">
+            <div class="advisory-box">
+              <div class="advisory-title">
+                <span>📋</span>
+                <span>Application & Dosage Guidelines:</span>
+              </div>
+              <p class="advisory-text" id="resFertAdvisory">
+                Apply in split doses during the vegetative stage. Avoid broadcast application on water-saturated surfaces.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      © 2026 Smart Agri AI | AI-Based Smart Agriculture Decision Support System
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/fertilizer.js"></script>
+</body>
+</html>
